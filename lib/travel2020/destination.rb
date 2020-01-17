@@ -7,5 +7,8 @@ class Travel2020::Destination
   
   def self.scrape_destinations  
     destinations = []
+    
+    doc = Nokogiri::HTML(open("https://www.lonelyplanet.com/best-in-travel"))
+    destinations
   end 
 end 
