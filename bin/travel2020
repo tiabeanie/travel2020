@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 
-require "bundler/setup"
-require "travel2020"
+require './lib/travel2020'
 
-travel2020::CLI.new.call
+Travel2020::CLI.new.call
