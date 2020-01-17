@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
+require './lib/travel2020
+
 travel2020::CLI.new.call

@@ -1,6 +1,2 @@
-require "travel2020/version"
-
-module Travel2020
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative "travel2020/version"
+require_relative './travel2020/cli'
