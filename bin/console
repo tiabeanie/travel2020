@@ -11,4 +11,4 @@ require "travel2020"
 # Pry.start
 
 require "irb"
-IRB.start(__FILE__)
+IRB.start
