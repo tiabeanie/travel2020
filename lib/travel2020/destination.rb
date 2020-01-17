@@ -1,11 +1,11 @@
 class Travel2020::Destination 
-  
+  attr_accessor :name, :continent, :url
   def self.all 
     puts <<-DOC 
       1. Bhutan
       2. England
-      3. North Macedonia 
-    DOC 
+      3. North Macedonia
+      DOC
     
     destination_1 = self.all 
     destination_1.name = "Bhutan"
@@ -22,4 +22,7 @@ class Travel2020::Destination
     destination_3.continent = "Europe"
     destination_3.url = "https://www.lonelyplanet.com/macedonia"
     
+    [destination_1, destination_2, destination_3]
     
+  end 
+end 
