@@ -8,11 +8,6 @@ class Travel2020::CLI
   
   def list_destinations
     puts "Top Ten Travel Destinations for 2020"
-    puts <<-DOC 
-      1. Bhutan
-      2. England
-      3. North Macedonia 
-    DOC
     @destination = Travel2020::Destination.all
   end 
   
