@@ -1,5 +1,5 @@
 class Travel2020::Destination 
-  attr_accessor :name, :continent, :url
+  attr_accessor :name, :url, :more
   
   def self.all 
     self.scrape_destinations
@@ -11,6 +11,10 @@ class Travel2020::Destination
     unparsed_page = HTTParty.get(url)
     parsed_page = Nokogiri::HTML(unparsed_page)
     destinations << name = parsed_page.css('h3').text.split(/\d.\s/)
+    destinations.each do |destination| 
+      new_destination = self.new 
+      new_destination.name = parsed_page.css('h3').text.split(/\d.\s/)
+      new destination.more = 
     byebug
     destinations
   end 
