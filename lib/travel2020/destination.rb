@@ -7,8 +7,11 @@ class Travel2020::Destination
   
   def self.scrape_destinations  
     destinations = []
-    
-    doc = Nokogiri::HTML(open("https://www.lonelyplanet.com/best-in-travel"))
+    url = "https://www.forbes.com/sites/duncanmadden/2019/10/22/the-lonely-planet-top-ten-tourism-countries-for-2020/#756101384cdd"
+    unparsed_page = HTTParty.get(url)
+    parsed_page = Nokogiri::HTML(unparsed_page)
+    destinations << name = parsed_page.css('h3').text
+    byebug
     destinations
   end 
 end 

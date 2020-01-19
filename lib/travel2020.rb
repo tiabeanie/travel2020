@@ -1,5 +1,5 @@
 require "nokogiri"
-require "pry"
+require "byebug"
 require "open-uri"
 require "httparty"
 
