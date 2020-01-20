@@ -7,10 +7,10 @@ class Travel2020::CLI
   end 
   
   def list_destinations
-    puts "Top Ten Travel Destinations for 2020"
+    puts "Top Five Travel Destinations for 2020"
     @destination = Travel2020::Destination.all
     @destination.each.with_index(1) do |destination, i|
-      puts "#{i}. #{destination.name} - #{destination.continent}"
+      puts "#{i}. #{destination.name}"
     end 
   end 
   
@@ -21,7 +21,7 @@ class Travel2020::CLI
       input = gets.strip.downcase
       if input.to_i > 0 
         the_destination = @destination[input.t0_i-1]
-        puts "#{i}. #{the_destination.name} - #{the_destinationdestination.continent}"
+        puts "#{i}. #{the_destination.name} - #{the_destination.more}"
       elsif input == "list"
         list_destinations
       else 

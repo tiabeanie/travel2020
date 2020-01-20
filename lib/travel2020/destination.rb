@@ -1,5 +1,5 @@
 class Travel2020::Destination 
-  attr_accessor :name, :url, :more
+  attr_accessor :name, :more
   
   def self.all 
     self.scrape_destinations
