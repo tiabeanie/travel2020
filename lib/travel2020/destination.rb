@@ -22,7 +22,7 @@ class Travel2020::Destination
 
     destination = self.new
     destination.name = doc.search("h1").text
-    destination.more = 
+    destination.more = doc.search("div.featured").text
 
     destination
   end
@@ -32,7 +32,7 @@ class Travel2020::Destination
 
     destination = self.new
     destination.name = doc.search("h1").text
-    destination.more = 
+    destination.more = doc.search("div.featured").text
 
     destination
   end
@@ -42,7 +42,7 @@ class Travel2020::Destination
 
     destination = self.new
     destination.name = doc.search("h1").text
-    destination.more = 
+    destination.more = doc.search("div.featured").text
 
     destination
   end
@@ -52,7 +52,7 @@ class Travel2020::Destination
 
     destination = self.new
     destination.name = doc.search("h1").text
-    destination.more = 
+    destination.more = doc.search("div.featured").text
 
     destination
   end
@@ -62,7 +62,7 @@ class Travel2020::Destination
 
     destination = self.new
     destination.name = doc.search("h1").text
-    destination.more = 
+    destination.more = doc.search("div.featured").text
 
     destination
   end
