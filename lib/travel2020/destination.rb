@@ -18,13 +18,51 @@ class Travel2020::Destination
   end
 
   def self.scrape_bhutan
-    page = HTTParty.get('https://www.lonelyplanet.com/bhutan')
-    parsed_page = Nokogiri::HTML(page)
+    doc = Nokogiri::HTML(open('https://www.lonelyplanet.com/bhutan'))
 
     destination = self.new
-    destination.name = doc.search("h2.main-title").text.strip
-    destination.continent
-    destination.more
+    destination.name = doc.search("h1").text
+    destination.more = 
+
+    destination
+  end
+  
+  def self.scrape_england
+    doc = Nokogiri::HTML(open('https://www.lonelyplanet.com/england'))
+
+    destination = self.new
+    destination.name = doc.search("h1").text
+    destination.more = 
+
+    destination
+  end
+  
+  def self.scrape_macedonia
+    doc = Nokogiri::HTML(open('https://www.lonelyplanet.com/macedonia'))
+
+    destination = self.new
+    destination.name = doc.search("h1").text
+    destination.more = 
+
+    destination
+  end
+  
+  def self.scrape_aruba
+    doc = Nokogiri::HTML(open('https://www.lonelyplanet.com/aruba-bonaire-and-curacao/aruba'))
+
+    destination = self.new
+    destination.name = doc.search("h1").text
+    destination.more = 
+
+    destination
+  end
+  
+  def self.scrape_swaziland
+    doc = Nokogiri::HTML(open('https://www.lonelyplanet.com/swaziland'))
+
+    destination = self.new
+    destination.name = doc.search("h1").text
+    destination.more = 
 
     destination
   end
