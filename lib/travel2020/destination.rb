@@ -5,17 +5,27 @@ class Travel2020::Destination
     self.scrape_destinations
   end 
   
-  def self.scrape_destinations  
+  def self.scrape_destinations
     destinations = []
-    url = "https://www.forbes.com/sites/duncanmadden/2019/10/22/the-lonely-planet-top-ten-tourism-countries-for-2020/#756101384cdd"
-    unparsed_page = HTTParty.get(url)
-    parsed_page = Nokogiri::HTML(unparsed_page)
-    destinations << name = parsed_page.css('h3').text.split(/\d.\s/)
-    destinations.each do |destination| 
-      new_destination = self.new 
-      new_destination.name = parsed_page.css('h3').text.split(/\d.\s/)
-      new destination.more = 
-    byebug
+
+    destinations << self.scrape_bhutan
+    destinations << self.scrape_england
+    destinations << self.scrape_macedonia
+    destinations << self.scrape_aruba
+    destinations << self.scrape_swaziland
+
     destinations
-  end 
+  end
+
+  def self.scrape_bhutan
+    page = HTTParty.get('https://www.lonelyplanet.com/bhutan')
+    parsed_page = Nokogiri::HTML(page)
+
+    destination = self.new
+    destination.name = doc.search("h2.main-title").text.strip
+    destination.continent
+    destination.more
+
+    destination
+  end
 end 
