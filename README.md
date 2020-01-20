@@ -1,8 +1,6 @@
 # Travel2020
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/travel2020`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem provides a list of top five travel destinations for 2020, along with a short description of each.
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run ./bin/travel2020 to run the program, enter the number of the destination you want more information about, type list to display the list again, or type exit to leave. 
 
 ## Development
 
