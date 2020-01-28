@@ -19,7 +19,7 @@ class Travel2020::CLI
     while input != "exit"
       puts "Enter the number of the destination you're interested in. Type list to see the destinations again or type exit to leave"
       input = gets.strip.downcase
-      if input.to_i > 0 
+      if input.to_i > 0 && input.to_i < 6 
         the_destination = @destination[input.to_i-1]
         puts "#{the_destination.name} - #{the_destination.more}"
       elsif input == "list"
