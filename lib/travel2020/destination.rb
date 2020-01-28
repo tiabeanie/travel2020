@@ -2,20 +2,24 @@
 class Travel2020::Destination 
   attr_accessor :name, :more
   
+  @@destinations = []
+  
   def self.all 
-    self.scrape_destinations
+    if @@destinations == []
+      self.scrape_destinations
+    else 
+      @@destinations
+    end 
   end 
   
   def self.scrape_destinations
-    destinations = []
+    @@destinations << self.scrape_bhutan
+    @@destinations << self.scrape_england
+    @@destinations << self.scrape_macedonia
+    @@destinations << self.scrape_aruba
+    @@destinations << self.scrape_swaziland
 
-    destinations << self.scrape_bhutan
-    destinations << self.scrape_england
-    destinations << self.scrape_macedonia
-    destinations << self.scrape_aruba
-    destinations << self.scrape_swaziland
-
-    destinations
+    @@destinations
   end
 
   def self.scrape_bhutan
