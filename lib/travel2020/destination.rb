@@ -1,69 +1,20 @@
 class Travel2020::Destination 
-  attr_accessor :name, :more
+  attr_reader :name, :more 
   
-  def self.all 
+  @urls = ["https://www.lonelyplanet.com/bhutan", "https://www.lonelyplanet.com/england", "https://www.lonelyplanet.com/macedonia", "https://www.lonelyplanet.com/aruba-bonaire-and-curacao/aruba", "https://www.lonelyplanet.com/swaziland"]
+  
+  def self.all
     self.scrape_destinations
-  end 
+  end
   
   def self.scrape_destinations
-    destinations = []
-
-    destinations << self.scrape_bhutan
-    destinations << self.scrape_england
-    destinations << self.scrape_macedonia
-    destinations << self.scrape_aruba
-    destinations << self.scrape_swaziland
-
-    destinations
-  end
-
-  def self.scrape_bhutan
-    doc = Nokogiri::HTML(open('https://www.lonelyplanet.com/bhutan'))
-
-    destination = self.new
-    destination.name = doc.search("h1").text
-    destination.more = doc.search("div.featured").text
-
-    destination
+    @urls.collect { |url| self.scrape(url) }
   end
   
-  def self.scrape_england
-    doc = Nokogiri::HTML(open('https://www.lonelyplanet.com/england'))
-
+  def self.scrape(url)
+    doc = Nokogiri::HTML(open('url'))
     destination = self.new
-    destination.name = doc.search("h1").text
+    destination.name = doc.search("h1").text 
     destination.more = doc.search("div.featured").text
-
-    destination
   end
-  
-  def self.scrape_macedonia
-    doc = Nokogiri::HTML(open('https://www.lonelyplanet.com/macedonia'))
-
-    destination = self.new
-    destination.name = doc.search("h1").text
-    destination.more = doc.search("div.featured").text
-
-    destination
-  end
-  
-  def self.scrape_aruba
-    doc = Nokogiri::HTML(open('https://www.lonelyplanet.com/aruba-bonaire-and-curacao/aruba'))
-
-    destination = self.new
-    destination.name = doc.search("h1").text
-    destination.more = doc.search("div.featured").text
-
-    destination
-  end
-  
-  def self.scrape_swaziland
-    doc = Nokogiri::HTML(open('https://www.lonelyplanet.com/swaziland'))
-
-    destination = self.new
-    destination.name = doc.search("h1").text
-    destination.more = doc.search("div.featured").text
-
-    destination
-  end
-end 
+end
