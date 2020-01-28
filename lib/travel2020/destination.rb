@@ -1,4 +1,4 @@
-Learn more or give us feedback
+
 class Travel2020::Destination 
   attr_accessor :name, :more
   
